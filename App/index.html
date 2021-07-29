@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone-no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Stores store-details</title>
+</head>
+<body>
+    <div class="stores-wrapper">
+        <section class="stores-list">
+            <div class="stores-list__header">
+                <h3>Stores list</h3>
+            </div>
+            <div class="stores-list__search">
+                <form class="stores-list__form" action="#">
+                    <input  id="js-search-input-stores" type="text" class="input-search" placeholder="...Search">
+                    <div class="stores-list__button-container">
+                        <button id="js-search-button-stores" class="search-btn"></button>
+                        <button id="js-refresh-button-stores" class="refresh-btn"></button>
+                    </div>
+                </form>
+            </div>
+            <div class="stores-list__controls">
+                <button class="stores-list__button controls-button arrow-up-btn"></button>
+                <button class="stores-list__button controls-button arrow-down-btn"></button>
+                <button class="stores-list__button controls-button pin-btn"></button>
+            </div>
+            <ul class="stores-list__items" id="js-stores-list__items">
+                <li  id="blank-spinner"class="blank-spinner js-hide">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </li>
+            </ul>
+            <footer class="stores-list__footer">
+                <button  id="js-create-store-btn" class="create-btn footer-btn">
+                    <span class="create-back">
+                    </span>
+                    Create
+                </button>
+            </footer>
+        </section>
+        <section class="store-information" id="js-store-information">
+            <article class="blank-page">
+                <h4  class="blank-page__header">Store is not selected</h4>
+                <div class="blank-page__body">
+                    <div class="blank-page__image"></div>
+                    <h5 class="blank-page__title">The store is not selected</h5>
+                    <span>Please select a store to proceed</span>
+                </div>
+            </article>
+        </section>
+        <footer  id= "js-product-footer" class="store-details__footer js-hide">
+            <button id="js-create-product-btn" class="create-btn footer-btn">
+                <div class="create-back">
+                </div>
+                Create
+            </button>
+            <button id="js-delete-store" class="delete-btn footer-btn">
+                <span class="delete-back"></span>
+                Delete
+            </button>
+        </footer>
+<!-- modal -->
+        <section  id="js-create-store-modal" class="modal create-store js-hide">
+            <div class="modal__block">
+                <form action="" class="modal__form" id ="js-create-store">
+                    <h3 class="modal__header">Create New Store</h3>
+                    <label for="new-store-name" class="form-field" ><span class="required">*</span>Name</label>
+                    <input  class="modal__input" type="text" id="new-store-name"  name="Name"placeholder="Enter new store's name">
+                    <label  for="new-store-email" class="form-field"><span class="required">*</span>E-mail</label>
+                    <input  class="modal__input" type="text" id="new-store-email"  name="Email" placeholder="Enter email">
+                    <label for="new-store-phone" for="new-store-name"class="form-field"><span class="required">*</span>Phone number</label>
+                    <input  class="modal__input" type="text" id="new-store-phone"  name="PhoneNumber" placeholder="Enter Phone number">
+                    <label for="new-store-address" class="form-field"><span class="required">*</span>Address</label>
+                    <input  class="modal__input" type="text" id="new-store-address" name="Address" placeholder="Enter Address">
+                    <label for="new-store-established" class="form-field"><span class="required">*</span>Established</label>
+                    <input  class="modal__input" type="date" id="new-store-established"  name="Established" placeholder="Enter Established date">
+                    <label for="new-store-area" class="form-field"><span class="required">*</span>Floor Area</label>
+                    <input  class="modal__input" type="text" id="new-store-area"  name="FloorArea"placeholder="Enter store's Area">
+                    <div class="modal__controls">
+                        <button  id="js-create-new-store" class="modal__button modal__create">Create</button>
+                        <button  id="close-create-store-modal" class="modal__button">Close</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section  id="js-create-product-modal"class="modal create-product js-hide">
+            <div class="modal__block">
+                <form action="" class="modal__form">
+                    <h3 class="modal__header">Create New Product</h3>
+                    <label  for="new-product-name" class="form-field"><span class="required">*</span>Name</label>
+                    <input class="modal__input" type="text" id="new-product-name" placeholder="Enter product name">
+                    <label for="new-product-price" class="form-field"><span class="required">*</span>Price</label>
+                    <input class="modal__input" type="text" id="new-product-price" placeholder="Enter price">
+                    <label for="new-product-specs" for="new-store-name"class="form-field"><span class="required">*</span>Enter specs</label>
+                    <input  class="modal__input" type="text" id="new-product-specs" placeholder="Enter specs for product">
+                    <label for="new-product-rating" class="form-field"><span class="required">*</span> Product rating</label>
+                    <input  class="modal__input" type="text" id="new-product-rating" placeholder="1...5">
+                    <label for="new-product-suplier" class="form-field"><span class="required">*</span>Supplier info</label>
+                    <input  class="modal__input" type="text" id="new-product-suplier" placeholder="Enter Supplier info">
+                    <label for="new-product-counry" class="form-field"><span class="required">*</span>Made in </label>
+                    <input  class="modal__input" type="text" id="new-product-counry" placeholder="Enter origin country">
+                    <label for="new-product-company" class="form-field"><span class="required">*</span>Product company Name</label>
+                    <input  class="modal__input" type="text" id="new-product-company" placeholder="Enter manufacturer name">
+                    <label for="new-product-status" class="form-field"><span class="required">*</span>Status</label>
+                    <select class="modal__input" id="new-product-status">
+                        <option value="OK">Ok</option>
+                        <option value="STORAGE">Storage</option>
+                        <option value="OUT_OF_STOCK">Out of stock</option>
+                    </select>
+                    <div class="modal__controls">
+                        <button  id="js-create-product-btn" class="modal__button modal__create">Create</button>
+                        <button  id="js-close-product-modal"class="modal__button">Close</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+    </div> 
+    <script src="mvc.js"></script>
+</body>
+</html>
